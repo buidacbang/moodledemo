@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "com.viettel.VTTLearning"
-        versionCode = "3.5.0"
+        versionCode = "20240"
         version   = "3.5.0">
     <name>AIT Learning</name>
 
@@ -11,12 +11,12 @@
         AIT Learning official app
     </description>
 
-    <author href="http://aittraining.vn" email="contact@aittraining.vn">
-        AIT Learning team
+    <author href="http://aittraining.vn" email="contact@aittraing.vn">
+        AIT Learning
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-        <string>3.5.0</string>
+        <string>3.4.2</string>
     </gap:config-file>
 
     <gap:platform name="ios" />

@@ -1,8 +1,8 @@
 {
     "app_id" : "com.viettel.VTTLearning",
     "appname": "AIT Learning",
-    "desktopappname": "AIT Learning Desktop",
-    "versioncode" : "3.5.0",
+    "desktopappname": "AIT Learning",
+    "versioncode" : "20240",
     "versionname" : "3.5.0",
     "cache_expiration_time" : 300000,
     "default_lang" : "en",
