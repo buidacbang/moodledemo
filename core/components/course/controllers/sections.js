@@ -94,10 +94,12 @@ angular.module('mm.core.course')
                 });
 
                 // Add a fake first section (all sections).
-                var result = [{
-                    name: $translate.instant('mm.course.allsections'),
-                    id: mmCoreCourseAllSectionsId
-                }].concat(sections);
+                var result = [
+                    //{
+                    //name: $translate.instant('mm.course.allsections'),
+                    //id: mmCoreCourseAllSectionsId
+                    //}
+                ].concat(sections);
 
 
                 $scope.sections = result;

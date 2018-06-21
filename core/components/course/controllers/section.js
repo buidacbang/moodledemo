@@ -34,9 +34,9 @@ angular.module('mm.core.course')
     $scope.sectionHasContent = $mmCourseHelper.sectionHasContent;
 
     if (sectionId < 0) {
-        $scope.title = $translate.instant('mm.course.allsections');
-        $scope.summary = null;
-        $scope.allSections = true;
+        //$scope.title = $translate.instant('mm.course.allsections');
+        //$scope.summary = null;
+        //$scope.allSections = true;
     }
 
     // Convenience function to fetch section(s).
