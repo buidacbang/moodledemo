@@ -16,7 +16,7 @@
     "demo_sites": {"student": {"url": "http://aitraining.vn/", "username": "student", "password": "moodle"}, "teacher": {"url": "http://aitraining.vn/", "username": "teacher", "password": "moodle"}},
     "gcmpn": "694767596569",
     "customurlscheme": "moodlemobile",
-    "siteurl": "http://aitraining.vn/",
+    "siteurl": "http://viettel-training.com/",
     "multisitesdisplay": "select",
     "skipssoconfirmation": "false",
     "forcedefaultlanguage": "false",
