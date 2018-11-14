@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" xmlns:android = "http://schemas.android.com/apk/res/android" id = "com.viettel.VTTLearning" versionCode = "20240" version = "3.5.0" ios-CFBundleIdentifier = "com.viettel.VTTLearning" ios-CFBundleVersion = "3.5.0">
-    <name>Viettel Learning</name>
+    <name>AIT Learning</name>
 
     <description>
-        Viettel Learning official app
+        AIT Learning official app
     </description>
 
     <author href="http://viettel-training.com" email="contact@viettel-training.vn">
-        Viettel Learning
+        AIT Learning
     </author>
 
     <gap:platform name="ios" />
