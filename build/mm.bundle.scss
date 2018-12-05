@@ -2274,146 +2274,6 @@ mm-course-mod-description .card .item {
   margin-top: 0;
 }
 
-$chart-size: 70px;
-$doughnut-border-size: 15px;
-$doughnut-dasharray: 173;
-$doughnut-empty-colour: $gray-light;
-$doughnut-fill-colour: $mm-color-light;
-$doughnut-border-colour:  $gray-dark;
-$doughnut-text-colour: $gray-darker;
-
-.item-course {
-  >.icon, >ion-spinner {
-    height: 32px + ($item-padding /2);
-    width: 32px + ($item-padding /2);
-    right: 0;
-    top: 6px;
-    color: $doughnut-text-colour;
-    position: absolute;
-  }
-
-  &.item-progress .mm-course-download-spinner {
-    top: 46px;
-  }
-
-  &:not(.item-progress) {
-    padding-right: 80px;
-
-    .mm-course-download-spinner {
-      right: 40px;
-    }
-  }
-}
-
-.item-progress {
-  @extend .item-avatar;
-  padding-left: $chart-size + ($item-padding * 2);
-  min-height: $chart-size + ($item-padding * 2);
-  >.progress-chart-container {
-    max-width: $chart-size;
-    max-height: $chart-size;
-    position: absolute;
-    top: $item-padding;
-    left: $item-padding;
-  }
-  h2 {
-    font-size: 21px;
-  }
-}
-
-.progress-chart-container {
-  height: $chart-size;
-  width: $chart-size;
-
-  .progress-doughnut {
-    position: relative;
-    height: $chart-size;
-    width: $chart-size;
-    background-clip: padding-box;
-    border: $doughnut-border-size solid $doughnut-empty-colour;
-    border-radius: 50%;
-    box-sizing: border-box;
-    display: table;
-
-    .progress-text {
-      display: table-cell;
-      text-align: center;
-      vertical-align: middle;
-      color: $doughnut-text-colour;
-      font-size: 95%;
-      letter-spacing: -1px;
-    }
-
-    .progress-indicator {
-      position: absolute;
-      top: ($doughnut-border-size * -1);
-      left: ($doughnut-border-size * -1);
-      height: $chart-size;
-      width: $chart-size;
-
-      svg {
-        position: relative;
-        height: 100%;
-        width: 100%;
-
-        .circle {
-          stroke-width: $doughnut-border-size;
-          stroke: $doughnut-fill-colour;
-          fill: none;
-          stroke-dasharray: $doughnut-dasharray;
-          stroke-dashoffset: $doughnut-dasharray;
-          transform: rotate(-90deg);
-          transform-origin: center center;
-
-          @for $i from 1 through 100 {
-              &.percent-#{$i} {
-                  stroke-dashoffset: $doughnut-dasharray - ($i / 100 * $doughnut-dasharray);
-              }
-          }
-        }
-      }
-    }
-  }
-
-  .no-progress {
-    height: $chart-size;
-    width: $chart-size;
-    background-color: $doughnut-empty-colour;
-    border-radius: 50%;
-    position: relative;
-    border: 0.5px solid $doughnut-border-colour;
-
-    .icon {
-      position: absolute;
-      text-align: center;
-      /*rtl:ignore*/
-      left: -1px;
-      top: -1px;
-      right: 0;
-      bottom: 0;
-      margin: 0;
-      color: $white;
-      height: $chart-size;
-      width: $chart-size;
-      line-height: $chart-size;
-      font-size: ($chart-size / 2) + 10px;
-      &:before {
-        width: $chart-size;
-      }
-    }
-  }
-}
-
-.mm-site_mm_coursescategories .item-icon-left,
-mm-course-list-item .item-icon-left {
-  color: $black;
-}
-
-.mm-course-enrollment-img {
-  max-width: 20px;
-  max-height: 34px;
-}
-
 .mm-capture-media-modal {
     background-color: $gray-light;
 
@@ -2881,6 +2741,145 @@ ion-side-menu li.item.item-divider {
 .mm-site_mm_user-profile .mm-tab-handlers {
     padding-bottom: 16px;
 }
+$chart-size: 70px;
+$doughnut-border-size: 15px;
+$doughnut-dasharray: 173;
+$doughnut-empty-colour: $gray-light;
+$doughnut-fill-colour: $mm-color-light;
+$doughnut-border-colour:  $gray-dark;
+$doughnut-text-colour: $gray-darker;
+
+.item-course {
+  >.icon, >ion-spinner {
+    height: 32px + ($item-padding /2);
+    width: 32px + ($item-padding /2);
+    right: 0;
+    top: 6px;
+    color: $doughnut-text-colour;
+    position: absolute;
+  }
+
+  &.item-progress .mm-course-download-spinner {
+    top: 46px;
+  }
+
+  &:not(.item-progress) {
+    padding-right: 80px;
+
+    .mm-course-download-spinner {
+      right: 40px;
+    }
+  }
+}
+
+.item-progress {
+  @extend .item-avatar;
+  padding-left: $chart-size + ($item-padding * 2);
+  min-height: $chart-size + ($item-padding * 2);
+  >.progress-chart-container {
+    max-width: $chart-size;
+    max-height: $chart-size;
+    position: absolute;
+    top: $item-padding;
+    left: $item-padding;
+  }
+  h2 {
+    font-size: 21px;
+  }
+}
+
+.progress-chart-container {
+  height: $chart-size;
+  width: $chart-size;
+
+  .progress-doughnut {
+    position: relative;
+    height: $chart-size;
+    width: $chart-size;
+    background-clip: padding-box;
+    border: $doughnut-border-size solid $doughnut-empty-colour;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: table;
+
+    .progress-text {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      color: $doughnut-text-colour;
+      font-size: 95%;
+      letter-spacing: -1px;
+    }
+
+    .progress-indicator {
+      position: absolute;
+      top: ($doughnut-border-size * -1);
+      left: ($doughnut-border-size * -1);
+      height: $chart-size;
+      width: $chart-size;
+
+      svg {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .circle {
+          stroke-width: $doughnut-border-size;
+          stroke: $doughnut-fill-colour;
+          fill: none;
+          stroke-dasharray: $doughnut-dasharray;
+          stroke-dashoffset: $doughnut-dasharray;
+          transform: rotate(-90deg);
+          transform-origin: center center;
+
+          @for $i from 1 through 100 {
+              &.percent-#{$i} {
+                  stroke-dashoffset: $doughnut-dasharray - ($i / 100 * $doughnut-dasharray);
+              }
+          }
+        }
+      }
+    }
+  }
+
+  .no-progress {
+    height: $chart-size;
+    width: $chart-size;
+    background-color: $doughnut-empty-colour;
+    border-radius: 50%;
+    position: relative;
+    border: 0.5px solid $doughnut-border-colour;
+
+    .icon {
+      position: absolute;
+      text-align: center;
+      /*rtl:ignore*/
+      left: -1px;
+      top: -1px;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      color: $white;
+      height: $chart-size;
+      width: $chart-size;
+      line-height: $chart-size;
+      font-size: ($chart-size / 2) + 10px;
+      &:before {
+        width: $chart-size;
+      }
+    }
+  }
+}
+
+.mm-site_mm_coursescategories .item-icon-left,
+mm-course-list-item .item-icon-left {
+  color: $black;
+}
+
+.mm-course-enrollment-img {
+  max-width: 20px;
+  max-height: 34px;
+}
 
 .mm-site_frontpage {
     .mma-frontpage-item-container .item-media {
@@ -2909,6 +2908,7 @@ ion-side-menu li.item.item-divider {
         }
     }
 }
+
 .mm-site_coursesgrades .item .badge {
   right: 16px;
 }
@@ -3338,24 +3338,58 @@ p.mma-mod-assign-warning {
   }
 }
 
-.mm-site_mod_choice {
-  .chart {
-    max-width: 400px;
-    margin: 0 auto;
+$mma-chat-notice-badge: "stable" !default;
+
+// The notice displayed in the list.
+.mma-chat-notice {
+
+  text-align: center;
+  margin-top: 10px;
+
+  span {
+    @extend .badge;
+    @extend .badge-#{$mma-chat-notice-badge};
+    white-space: normal;
+  }
+}
+
+.mma-chat-input-inset {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+.mma-chat-footer-note {
+    color: $button-light-text;
+    font-size: $font-size-base;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.mma-chat-send-form {
+  width: 100%;
+}
+
+.mma-chat-reconnect-button, .button.mma-chat-reconnect-button {
+  margin: 0;
+}
+
+.mma-mod_chat-users-modal {
+  .item-complex .item-avatar {
+    padding-bottom: 0;
+
+    .tabs {
+      border: 0;
+    }
   }
 
-  @media (min-width: 767px) {
-    .col {
-      border-left: $item-border-width solid $item-default-border;
+  .button-bar {
+    padding: 0;
+    border: 0;
 
-      &.item, .chart-item {
-        margin-top: 0;
-        border-top: 0;
-      }
-
-      &:first-child {
-        border-left: 0;
-      }
+    .button {
+      border: 0;
     }
   }
 }
@@ -3497,83 +3531,24 @@ p.mma-mod-assign-warning {
     margin-right: 1px;
   }
 }
-.mm-site_mod_feedback {
-  .mm-analysis {
-    ul {
-      font-size: $font-size-base;
-    }
-    .item .chart {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-  }
-}
-
-.mm-site_mod_feedback-form {
-  .item-select select {
-      position: relative;
-      padding: $item-padding / 2;
-      max-width: 100%;
-      width: 100%;
-      direction: ltr;
-  }
-  input, textarea {
-    background: transparent;
-  }
-}
-
-$mma-chat-notice-badge: "stable" !default;
-
-// The notice displayed in the list.
-.mma-chat-notice {
-
-  text-align: center;
-  margin-top: 10px;
-
-  span {
-    @extend .badge;
-    @extend .badge-#{$mma-chat-notice-badge};
-    white-space: normal;
-  }
-}
-
-.mma-chat-input-inset {
-    padding-top: 0;
-    padding-left: 0;
-    padding-bottom: 0;
-}
-
-.mma-chat-footer-note {
-    color: $button-light-text;
-    font-size: $font-size-base;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-}
-
-.mma-chat-send-form {
-  width: 100%;
-}
-
-.mma-chat-reconnect-button, .button.mma-chat-reconnect-button {
-  margin: 0;
-}
-
-.mma-mod_chat-users-modal {
-  .item-complex .item-avatar {
-    padding-bottom: 0;
-
-    .tabs {
-      border: 0;
-    }
+.mm-site_mod_choice {
+  .chart {
+    max-width: 400px;
+    margin: 0 auto;
   }
 
-  .button-bar {
-    padding: 0;
-    border: 0;
+  @media (min-width: 767px) {
+    .col {
+      border-left: $item-border-width solid $item-default-border;
 
-    .button {
-      border: 0;
+      &.item, .chart-item {
+        margin-top: 0;
+        border-top: 0;
+      }
+
+      &:first-child {
+        border-left: 0;
+      }
     }
   }
 }
@@ -3665,51 +3640,6 @@ $mma-chat-notice-badge: "stable" !default;
         padding: 0;
         border: 0
     }
-}
-
-.item.mma-mod-lesson-selected {
-  @extend .mm-menu-selected;
-}
-
-.mma-mod-lesson-slideshow {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.mma-mod-lesson-ongoingscore,
-.item.mma-mod-lesson-ongoingscore,
-.mma-mod-lesson-ongoingscore span,
-.item.mma-mod-lesson-ongoingscore span {
-  // Same styles as .item p.
-  color: $gray-darker;
-  font-size: 14px;
-}
-
-.mma-mod_lesson-lessonstats, .mma-mod_lesson-userstats {
-  .item.row .col-33,
-  .item.row .col-50 {
-    border-color: $item-default-border;
-    border-style: solid;
-    &:not(:first-child) {
-      border-left-width: $item-border-width;
-    }
-  }
-}
-
-.mm-site_mod_lesson-userretake {
-  .mma-mod_lesson-answer {
-    .item {
-      border-top: 1px solid $item-default-border;
-      border-radius: 0;
-    }
-  }
-
-  .highlight {
-    background-color: $blue-light;
-    p {
-      color: $blue-dark;
-    }
-  }
 }
 
 
@@ -3808,53 +3738,74 @@ p.mma-mod-quiz-warning {
 #mma-mod-quiz-toc .item {
   border-color: $gray-dark;
 }
+.item.mma-mod-lesson-selected {
+  @extend .mm-menu-selected;
+}
 
-$mma-mod-scorm-level-margin:		25px !default;
-$mma-mod-scorm-warning-color:		$red !default;
+.mma-mod-lesson-slideshow {
+  max-width: 100%;
+  max-height: 100%;
+}
 
-@for $i from 0 through 15 {
-  .mma-scorm-level-#{$i} {
-    padding-left: $item-padding + 15px * $i
+.mma-mod-lesson-ongoingscore,
+.item.mma-mod-lesson-ongoingscore,
+.mma-mod-lesson-ongoingscore span,
+.item.mma-mod-lesson-ongoingscore span {
+  // Same styles as .item p.
+  color: $gray-darker;
+  font-size: 14px;
+}
+
+.mma-mod_lesson-lessonstats, .mma-mod_lesson-userstats {
+  .item.row .col-33,
+  .item.row .col-50 {
+    border-color: $item-default-border;
+    border-style: solid;
+    &:not(:first-child) {
+      border-left-width: $item-border-width;
+    }
   }
 }
 
-.mma-mod-scorm-checkbox-padding {
-  padding: 5px 10px;
+.mm-site_mod_lesson-userretake {
+  .mma-mod_lesson-answer {
+    .item {
+      border-top: 1px solid $item-default-border;
+      border-radius: 0;
+    }
+  }
+
+  .highlight {
+    background-color: $blue-light;
+    p {
+      color: $blue-dark;
+    }
+  }
 }
 
-.mma-mod-scorm-warning {
-  color: $mma-mod-scorm-warning-color;
+.mm-site_mod_feedback {
+  .mm-analysis {
+    ul {
+      font-size: $font-size-base;
+    }
+    .item .chart {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
 }
 
-ion-popover-view {
-  /* Adapt popover to content's height. The popover's ion-content needs to disable Ionic scroll. */
-  &.mma-scorm-popover {
-    height: auto;
-    max-height: 80%;
-    overflow: scroll;
-
-    ion-content {
+.mm-site_mod_feedback-form {
+  .item-select select {
       position: relative;
-    }
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    p.padding {
-      margin: 0px; /* Don't add margins to p with padding inside the TOC. */
-    }
+      padding: $item-padding / 2;
+      max-width: 100%;
+      width: 100%;
+      direction: ltr;
   }
-
-  /* Decrease items padding in popover. */
-  .mma-scorm-popover-item {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  input, textarea {
+    background: transparent;
   }
-}
-
-/* Fix popover styles in iOS. */
-.platform-ios ion-popover-view.mma-scorm-popover {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .mm-site_mod_survey {
@@ -3947,6 +3898,55 @@ $mma-mod-wiki-subwiki-selected-background-color:   $gray-light !default;
   }
 }
 
+
+$mma-mod-scorm-level-margin:		25px !default;
+$mma-mod-scorm-warning-color:		$red !default;
+
+@for $i from 0 through 15 {
+  .mma-scorm-level-#{$i} {
+    padding-left: $item-padding + 15px * $i
+  }
+}
+
+.mma-mod-scorm-checkbox-padding {
+  padding: 5px 10px;
+}
+
+.mma-mod-scorm-warning {
+  color: $mma-mod-scorm-warning-color;
+}
+
+ion-popover-view {
+  /* Adapt popover to content's height. The popover's ion-content needs to disable Ionic scroll. */
+  &.mma-scorm-popover {
+    height: auto;
+    max-height: 80%;
+    overflow: scroll;
+
+    ion-content {
+      position: relative;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    p.padding {
+      margin: 0px; /* Don't add margins to p with padding inside the TOC. */
+    }
+  }
+
+  /* Decrease items padding in popover. */
+  .mma-scorm-popover-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+/* Fix popover styles in iOS. */
+.platform-ios ion-popover-view.mma-scorm-popover {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .mm-site_mod_workshop,
 .mm-site_mod_workshop-submission,
 .mm-site_mod_workshop-assessment {
@@ -3985,19 +3985,6 @@ $mma-qbehaviour-deferredcbm-confident-color:    $red !default;
 .mma-qbehaviour-deferredcbm-certainty-title, .item.mma-qbehaviour-deferredcbm-certainty-title, .item.mma-qbehaviour-deferredcbm-certainty-title p {
 	font-weight: bold;
 	font-size: 16px;
-}
-
-// Style match content a bit.
-.mma-qtype-calculated-container .item-select {
-  select,
-  .mm-select-fix {
-    padding: 0 36px 0 0;
-    max-width: 100%;
-    display: flex;
-    justify-content:center;
-    align-content:center;
-    flex-direction:column;
-  }
 }
 
 // Style ddmarker content a bit. Almost all these styles are copied from Moodle.
@@ -4100,6 +4087,125 @@ $mma-qbehaviour-deferredcbm-confident-color:    $red !default;
   }
   div.dragitems div.draghome img.target {
     display: none;
+  }
+}
+// Style match content a bit.
+.mma-qtype-calculated-container .item-select {
+  select,
+  .mm-select-fix {
+    padding: 0 36px 0 0;
+    max-width: 100%;
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+  }
+}
+
+// Style ddimageortext content a bit. Almost all these styles are copied from Moodle.
+.mma-qtype-ddimageortext-container {
+  mm-loading {
+    position: absolute;
+    left: 50%;
+  }
+
+  .qtext {
+    margin-bottom: 0.5em;
+    display: block;
+  }
+
+  div.droparea img {
+    border: 1px solid $gray-darker;
+    max-width: 100%;
+  }
+
+  .draghome {
+    vertical-align: top;
+    margin: 5px;
+    visibility : hidden;
+  }
+  .draghome img {
+    display: block;
+  }
+
+  div.draghome {
+    border: 1px solid $gray-darker;
+    cursor: pointer;
+    background-color: #B0C4DE;
+    display:inline-block;
+    height: auto;
+    width: auto;
+    zoom: 1;
+  }
+
+  .group1 {
+    background-color: $white;
+  }
+  .group2 {
+    background-color: $blue-light;
+  }
+  .group3 {
+    background-color: #DCDCDC;
+  }
+  .group4 {
+    background-color: #D8BFD8;
+  }
+  .group5 {
+    background-color: #87CEFA;
+  }
+  .group6 {
+    background-color: #DAA520;
+  }
+  .group7 {
+    background-color: #FFD700;
+  }
+  .group8 {
+    background-color: #F0E68C;
+  }
+  .drag {
+    border: 1px solid $gray-darker;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .dragitems.readonly .drag {
+    cursor: auto;
+  }
+  .dragitems>div {
+    clear: both;
+  }
+  .dragitems {
+    cursor: pointer;
+  }
+  .dragitems.readonly {
+    cursor: auto;
+  }
+  .drag img {
+    display: block;
+  }
+
+  div.ddarea {
+    text-align : center;
+    position: relative;
+  }
+  .dropbackground {
+    margin:0 auto;
+  }
+  .dropzone {
+    border: 1px solid $gray-darker;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .readonly .dropzone {
+    cursor: auto;
+  }
+
+  div.dragitems div.draghome, div.dragitems div.drag {
+    font:13px/1.231 arial,helvetica,clean,sans-serif;
+  }
+  .drag.beingdragged {
+    z-index: 3;
+    box-shadow: 3px 3px 4px $gray-darker;
   }
 }
 // Style ddwtos content a bit. Almost all these styles are copied from Moodle.
@@ -4214,112 +4320,6 @@ $mma-qbehaviour-deferredcbm-confident-color:    $red !default;
 
 
 
-// Style ddimageortext content a bit. Almost all these styles are copied from Moodle.
-.mma-qtype-ddimageortext-container {
-  mm-loading {
-    position: absolute;
-    left: 50%;
-  }
-
-  .qtext {
-    margin-bottom: 0.5em;
-    display: block;
-  }
-
-  div.droparea img {
-    border: 1px solid $gray-darker;
-    max-width: 100%;
-  }
-
-  .draghome {
-    vertical-align: top;
-    margin: 5px;
-    visibility : hidden;
-  }
-  .draghome img {
-    display: block;
-  }
-
-  div.draghome {
-    border: 1px solid $gray-darker;
-    cursor: pointer;
-    background-color: #B0C4DE;
-    display:inline-block;
-    height: auto;
-    width: auto;
-    zoom: 1;
-  }
-
-  .group1 {
-    background-color: $white;
-  }
-  .group2 {
-    background-color: $blue-light;
-  }
-  .group3 {
-    background-color: #DCDCDC;
-  }
-  .group4 {
-    background-color: #D8BFD8;
-  }
-  .group5 {
-    background-color: #87CEFA;
-  }
-  .group6 {
-    background-color: #DAA520;
-  }
-  .group7 {
-    background-color: #FFD700;
-  }
-  .group8 {
-    background-color: #F0E68C;
-  }
-  .drag {
-    border: 1px solid $gray-darker;
-    cursor: pointer;
-    z-index: 2;
-  }
-  .dragitems.readonly .drag {
-    cursor: auto;
-  }
-  .dragitems>div {
-    clear: both;
-  }
-  .dragitems {
-    cursor: pointer;
-  }
-  .dragitems.readonly {
-    cursor: auto;
-  }
-  .drag img {
-    display: block;
-  }
-
-  div.ddarea {
-    text-align : center;
-    position: relative;
-  }
-  .dropbackground {
-    margin:0 auto;
-  }
-  .dropzone {
-    border: 1px solid $gray-darker;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
-  }
-  .readonly .dropzone {
-    cursor: auto;
-  }
-
-  div.dragitems div.draghome, div.dragitems div.drag {
-    font:13px/1.231 arial,helvetica,clean,sans-serif;
-  }
-  .drag.beingdragged {
-    z-index: 3;
-    box-shadow: 3px 3px 4px $gray-darker;
-  }
-}
 // Style gapselect content a bit. All these styles are copied from Moodle.
 .mma-qtype-gapselect-container {
   p {
@@ -4340,6 +4340,19 @@ $mma-qbehaviour-deferredcbm-confident-color:    $red !default;
   }
 }
 
+
+// Style match content a bit.
+.mma-qtype-match-container .item-select {
+  select,
+  .mm-select-fix {
+    padding: 0 36px 0 0;
+    max-width: 100%;
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+  }
+}
 
 // Style multianswer content a bit. All these styles are copied from Moodle.
 .mma-qtype-multianswer-container {
@@ -4385,16 +4398,3 @@ $mma-qbehaviour-deferredcbm-confident-color:    $red !default;
   }
 }
 
-
-// Style match content a bit.
-.mma-qtype-match-container .item-select {
-  select,
-  .mm-select-fix {
-    padding: 0 36px 0 0;
-    max-width: 100%;
-    display: flex;
-    justify-content:center;
-    align-content:center;
-    flex-direction:column;
-  }
-}
